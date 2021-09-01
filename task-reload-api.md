@@ -47,6 +47,21 @@ HEADERS:
 - X-Qlik-xrfkey=12345678qwertyui
 - X-Qlik-User=UserDirectory=QLIKSENSE;UserId=qlik
 
+### CURL
 
+REf: https://help.qlik.com/en-US/sense-developer/May2021/Subsystems/RepositoryServiceAPI/Content/Sense_RepositoryServiceAPI/RepositoryServiceAPI-Example-Connect-cURL-Certificates.htm
+
+
+```sh
+
+curl \
+--cert /home/airflow/airflow/cert/client.pem \
+--insecure https://192.168.248.206:4242/qrs/task/24133dbc-7713-4292-913a-b4d03553877e/start/synchronous?xrfkey=12345678qwertyui \
+--header "x-qlik-xrfkey: 12345678qwertyui" \
+--header "X-Qlik-User: UserDirectory=QLIKSENSE;UserId=qlik"
+
+
+
+``` 
 
 
