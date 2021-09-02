@@ -66,6 +66,15 @@ curl \
 --header 'X-Qlik-User: UserDirectory=QLIKSENSE;UserId=qlik'
 
 
+curl \
+--insecure \
+--key /home/airflow/airflow/cert/client_key.pem \
+--cert /home/airflow/airflow/cert/client.pem \
+--request POST \
+'https://192.168.248.206:4242/qrs/task/24133dbc-7713-4292-913a-b4d03553877e/start/synchronous?xrfkey=12345678qwertyui' \
+--header 'Content-Length: 0' \
+--header 'X-Qlik-xrfkey: 12345678qwertyui' \
+--header 'X-Qlik-User: UserDirectory=QLIKSENSE;UserId=qlik'
 
 ``` 
 
