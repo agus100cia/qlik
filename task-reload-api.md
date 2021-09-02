@@ -53,6 +53,20 @@ REf: https://help.qlik.com/en-US/sense-developer/May2021/Subsystems/RepositorySe
 
 
 ```sh
+## TASKS
+curl \
+--insecure \
+--key /home/airflow/airflow/cert/client_key.pem \
+--cert /home/airflow/airflow/cert/client.pem \
+--location \
+--request GET \
+'https://192.168.248.206:4242/qrs/task/full?xrfkey=12345678qwertyui' \
+--header 'X-Qlik-xrfkey: 12345678qwertyui' \
+--header 'X-Qlik-User: UserDirectory=QLIKSENSE;UserId=qlik'
+
+
+## RELOAD TASK
+
 
 curl \
 --insecure \
