@@ -55,10 +55,15 @@ REf: https://help.qlik.com/en-US/sense-developer/May2021/Subsystems/RepositorySe
 ```sh
 
 curl \
---cert /home/airflow/airflow/cert/client.pem \
---insecure https://192.168.248.206:4242/qrs/task/24133dbc-7713-4292-913a-b4d03553877e/start/synchronous?xrfkey=12345678qwertyui \
---header "x-qlik-xrfkey: 12345678qwertyui" \
---header "X-Qlik-User: UserDirectory=QLIKSENSE;UserId=qlik"
+--insecure \
+--key client_key.pem \
+--cert client.pem \
+--location \
+--request POST \
+'https://192.168.248.206:4242/qrs/task/24133dbc-7713-4292-913a-b4d03553877e/start/synchronous?xrfkey=12345678qwertyui' \
+-H "Content-Length: 0" \
+--header 'X-Qlik-xrfkey: 12345678qwertyui' \
+--header 'X-Qlik-User: UserDirectory=QLIKSENSE;UserId=qlik'
 
 
 
